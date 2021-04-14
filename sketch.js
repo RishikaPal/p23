@@ -39,11 +39,10 @@ function setup() {
 
   ground=Bodies.rectangle(width/2,650,width,10,{isStatic:true});
   World.add(world,ground) ;
-     Engine.run(engine);
-}
+    
 
 boxPosition=width/2-100 ;
-    box.Y=610;
+    boxY=610;
     boxleftSprite=createSprite(boxPosition, boxY, 20,100);
     boxleftSprite.shapeColor=color(255,0,0);
     boxLeftBody = Bodies.rectangle(boxPosition+20, boxY, 20,100 , {isStatic:true} );
@@ -58,6 +57,8 @@ boxPosition=width/2-100 ;
      World.add(world, boxRightBody);
 
 function draw() {
+    Engine.run(engine);
+}
     rectMode(CENTER);
     background(0);
     packageSprite.x=packagebody.position.x
@@ -68,7 +69,7 @@ function draw() {
 function keyPressed() {
     
            if (keyCode === DOWN_ARROW) { 
-               Matter.Body.setStatic(packageBody,false); 
+               Matter.Body.setStatic(packagebody,false); 
                
         
         } 
